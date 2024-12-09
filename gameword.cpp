@@ -6,7 +6,7 @@
 #include <algorithm>
 
 using namespace std;
-
+//1
 int Points(const string& startWord, const string& move, vector <string>& enteredWords)
 {
 	int points = 0;
