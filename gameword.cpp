@@ -6,7 +6,7 @@
 #include <algorithm>
 
 using namespace std;
-//1
+
 int Points(const string& startWord, const string& move, vector <string>& enteredWords)
 {
 	int points = 0;
@@ -68,8 +68,6 @@ void Play(const int& players, const string& startWord)
 	string move;
 	getline(cin, move);
 
-	
-
 	while (onGame)
 	{
 		cout << "Ход " << currentPlayer << "-го игрока: ";
@@ -116,13 +114,18 @@ int main()
 	
 	int players;
 	string startWord;
-
+    bool isInvalid;
+    
 	cout << "Число игроков: ";
 	cin >> players;
-	cout << "\nИсходное слово: ";
-	cin >> startWord;
-
-	Play(players, startWord);
+    if(players < 2 || players > 4) {
+        cout << "ошибка, число игроков может быть от 2 до 4, пересмотрите свой выбор: ";
+    }
+    else {
+        cout << "\nИсходное слово: ";
+	    cin >> startWord;
+	    Play(players, startWord);
+    }
 
 	return 0;
 }
